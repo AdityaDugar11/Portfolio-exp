@@ -883,7 +883,7 @@ function App() {
   return (
     <div className="portfolio">
       <nav style={{ position: 'fixed', top: 0, left: 0, width: '100%', padding: '2.5rem 4vw', zIndex: 100, display: 'flex', justifyContent: 'space-between', mixBlendMode: 'difference' }}>
-        <div className="text-regular" style={{ fontWeight: 500, letterSpacing: '0.05em', textTransform: 'uppercase' }}>Aditya</div>
+        <div className="text-regular" style={{ fontWeight: 500, letterSpacing: '0.05em', textTransform: 'uppercase' }}>Aditya Dugar</div>
         <div className="text-regular" style={{ opacity: 0.7 }}>AI SYSTEMS BUILDER</div>
       </nav>
       <main className="container">

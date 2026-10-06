@@ -186,6 +186,10 @@ app.get('/api/projects', async (req, res) => {
   }
 });
 
-app.listen(PORT, () => {
-  console.log(`API Server running on http://localhost:${PORT}`);
-});
+if (process.env.NODE_ENV !== 'production') {
+  app.listen(PORT, () => {
+    console.log(`API Server running on http://localhost:${PORT}`);
+  });
+}
+
+export default app;
