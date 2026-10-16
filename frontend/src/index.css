@@ -75,6 +75,21 @@ body {
   position: relative;
 }
 
+.section-hero {
+  isolation: isolate;
+}
+
+.section-hero > h1 {
+  /* Decorative text must not intercept portrait pointer/touch input. */
+  pointer-events: none;
+  position: relative;
+  z-index: 2;
+}
+
+.section-hero > div:not(.hero-portrait) {
+  z-index: 3;
+}
+
 .grid {
   display: grid;
   gap: 2rem;

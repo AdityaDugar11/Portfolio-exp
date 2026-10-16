@@ -1,0 +1,80 @@
+
+.hero-portrait {
+  --mask-radius: 180px;
+  --pointer-x: -9999px;
+  --pointer-y: -9999px;
+  touch-action: none;
+  position: absolute;
+  right: 2vw;
+  bottom: 0;
+  width: min(46vw, 650px);
+  /* Keep the existing hero footprint; both layers share this contain frame. */
+  aspect-ratio: 1085 / 1450;
+  height: auto; /* height will follow aspect ratio */
+  min-height: 360px;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: auto;
+}
+
+.portrait-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* keep full image and align both layers */
+  object-position: center;
+  user-select: none;
+  -webkit-user-drag: none;
+  pointer-events: none;
+}
+
+.portrait-normal {
+  z-index: 1;
+}
+
+/* Mask the full host, not the offset/scaled source image. */
+.portrait-cyberpunk {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  visibility: hidden;
+  /* Hard clip is also a safe circular fallback if CSS masks are unsupported. */
+  clip-path: circle(var(--mask-radius) at var(--pointer-x) var(--pointer-y));
+  -webkit-mask-image: radial-gradient(
+    circle var(--mask-radius) at var(--pointer-x) var(--pointer-y),
+    #fff 0%, #fff 65%, transparent 100%
+  );
+  mask-image: radial-gradient(
+    circle var(--mask-radius) at var(--pointer-x) var(--pointer-y),
+    #fff 0%, #fff 65%, transparent 100%
+  );
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+}
+
+.hero-portrait[data-revealing="true"] .portrait-cyberpunk {
+  visibility: visible;
+}
+
+@media (max-width: 767px) {
+  .hero-portrait {
+    --mask-radius: 108px;
+    right: -8vw;
+    width: 78vw;
+    height: 54vh;
+    min-height: 280px;
+    opacity: 0.8;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-portrait,
+  .portrait-image {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+

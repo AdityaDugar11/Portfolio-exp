@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import HeroPortrait from './components/HeroPortrait.jsx';
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -890,6 +891,8 @@ function App() {
 
         {/* 1. Hero */}
         <section ref={heroRef} className="section section-hero">
+          <HeroPortrait />
+
           <h1 ref={headlineRef} className="heading-jumbo mb-4" style={{ display: 'flex', flexDirection: 'column', marginTop: '12vh' }}>
             <div style={{ overflow: 'hidden' }}>
               <div className="hero-line">AI Systems</div>
