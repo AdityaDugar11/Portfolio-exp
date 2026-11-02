@@ -883,9 +883,9 @@ function App() {
 
   return (
     <div className="portfolio">
-      <nav style={{ position: 'fixed', top: 0, left: 0, width: '100%', padding: '2.5rem 4vw', zIndex: 100, display: 'flex', justifyContent: 'space-between', mixBlendMode: 'difference' }}>
-        <div className="text-regular" style={{ fontWeight: 500, letterSpacing: '0.05em', textTransform: 'uppercase' }}>Aditya Dugar</div>
-        <div className="text-regular" style={{ opacity: 0.7 }}>AI SYSTEMS BUILDER</div>
+      <nav className="portfolio-nav">
+        <div className="text-regular nav-title">Aditya Dugar</div>
+        <div className="text-regular nav-role">AI SYSTEMS BUILDER</div>
       </nav>
       <main className="container">
 
@@ -893,7 +893,7 @@ function App() {
         <section ref={heroRef} className="section section-hero">
           <HeroPortrait />
 
-          <h1 ref={headlineRef} className="heading-jumbo mb-4" style={{ display: 'flex', flexDirection: 'column', marginTop: '12vh' }}>
+          <h1 ref={headlineRef} className="heading-jumbo mb-4 hero-headline">
             <div style={{ overflow: 'hidden' }}>
               <div className="hero-line">AI Systems</div>
             </div>
@@ -902,49 +902,49 @@ function App() {
             </div>
           </h1>
 
-          <div ref={scrollIndicatorRef} style={{ position: 'absolute', bottom: '8vh', left: '4vw' }}>
+          <div ref={scrollIndicatorRef} className="hero-scroll-indicator">
             <span className="text-regular" style={{ fontSize: '0.75rem', letterSpacing: '0.15em', textTransform: 'uppercase' }}>Scroll to explore ↓</span>
           </div>
         </section>
 
         {/* 2. About */}
-        <section ref={aboutRef} className="section" style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', justifyContent: 'center', backgroundColor: 'var(--bg-color)', position: 'relative', zIndex: 10 }}>
-          <div ref={aboutDescRef} style={{ width: '100%', maxWidth: '1400px', display: 'flex', flexDirection: 'column', gap: '2.5rem' }}>
+        <section ref={aboutRef} className="section section-about">
+          <div ref={aboutDescRef} className="about-content">
 
             {/* Primary statement */}
-            <div style={{ display: 'flex', flexDirection: 'column' }}>
+            <div className="about-primary">
 
               <div style={{ overflow: 'hidden' }}>
-                <p className="line-text" style={{fontSize: 'clamp(1.5rem, 4vw, 3.5rem)', lineHeight: '1.2', letterSpacing: '-0.02em', fontWeight: 400, margin: 0}}>I'm Aditya Dugar, a Software Engineering</p>
+                <p className="line-text about-primary-text">I'm Aditya Dugar, a Software Engineering</p>
               </div>
 
               <div style={{ overflow: 'hidden' }}>
-                <p className="line-text" style={{fontSize: 'clamp(1.5rem, 4vw, 3.5rem)', lineHeight: '1.2', letterSpacing: '-0.02em', fontWeight: 400, margin: 0}}>student at Jain University. I build</p>
+                <p className="line-text about-primary-text">student at Jain University. I build</p>
               </div>
 
               <div style={{ overflow: 'hidden' }}>
-                <p className="line-text" style={{fontSize: 'clamp(1.5rem, 4vw, 3.5rem)', lineHeight: '1.2', letterSpacing: '-0.02em', fontWeight: 400, margin: 0}}><span className="accent-text">AI-powered systems</span>, <span className="accent-text">intelligent automation</span>,</p>
+                <p className="line-text about-primary-text"><span className="accent-text">AI-powered systems</span>, <span className="accent-text">intelligent automation</span>,</p>
               </div>
 
               <div style={{ overflow: 'hidden' }}>
-                <p className="line-text" style={{fontSize: 'clamp(1.5rem, 4vw, 3.5rem)', lineHeight: '1.2', letterSpacing: '-0.02em', fontWeight: 400, margin: 0}}>and modern web experiences.</p>
+                <p className="line-text about-primary-text">and modern web experiences.</p>
               </div>
 
             </div>
 
             {/* Secondary statement */}
-            <div style={{ display: 'flex', flexDirection: 'column' }}>
+            <div className="about-secondary">
 
               <div style={{ overflow: 'hidden' }}>
-                <p className="line-text" style={{fontSize: 'clamp(1.125rem, 2vw, 1.5rem)', lineHeight: '1.6', fontWeight: 300, opacity: 0.8,maxWidth: '800px',margin: 0}}>From RAG agents and computer vision to</p>
+                <p className="line-text about-secondary-text">From RAG agents and computer vision to</p>
               </div>
 
               <div style={{ overflow: 'hidden' }}>
-                <p className="line-text" style={{fontSize: 'clamp(1.125rem, 2vw, 1.5rem)', lineHeight: '1.6', fontWeight: 300, opacity: 0.8,maxWidth: '800px',margin: 0}}>automation pipelines and full-stack products,</p>
+                <p className="line-text about-secondary-text">automation pipelines and full-stack products,</p>
               </div>
 
               <div style={{ overflow: 'hidden' }}>
-                <p className="line-text" style={{fontSize: 'clamp(1.125rem, 2vw, 1.5rem)', lineHeight: '1.6', fontWeight: 300, opacity: 0.8,maxWidth: '800px',margin: 0}}>I learn by building and turning ideas into working software.</p>
+                <p className="line-text about-secondary-text">I learn by building and turning ideas into working software.</p>
               </div>
 
             </div>
@@ -1007,7 +1007,7 @@ function App() {
                       ))}
                     </div>
                     <span
-                      className="accent-text"
+                      className="accent-text project-cta"
                       style={{ marginTop: '2.5rem', display: 'inline-block', fontWeight: 500, letterSpacing: '0.05em', fontSize: '1.125rem' }}
                     >
                       VIEW PROJECT ↗
@@ -1020,15 +1020,15 @@ function App() {
         </section>
 
         {/* 4. Experiments */}
-        <section ref={experimentsRef} className="section" style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', paddingTop: '10vh' }}>
-          <div style={{ paddingLeft: '4vw', paddingRight: '4vw' }}>
+        <section ref={experimentsRef} className="section section-experiments">
+          <div className="experiments-header">
             <h2 className="heading-large mb-4">Experiments</h2>
             <p className="text-regular mb-8" style={{ opacity: 0.7 }}>
               An evolving map of what I build, test, and explore. <br/>
               {!reposLoading && reposData.length > 0 ? `${reposData.length} public repositories represented.` : 'Loading network...'}
             </p>
           </div>
-          <div className="graph-wrapper" style={{ flexGrow: 1, position: 'relative', overflow: 'hidden', width: '100%', borderTop: '1px solid rgba(255,255,255,0.1)', borderBottom: '1px solid rgba(255,255,255,0.1)' }}>
+          <div className="graph-wrapper">
             {!reposLoading && reposData.length > 0 && (
               <RepoGraph repos={reposData} />
             )}
@@ -1037,64 +1037,64 @@ function App() {
 
         {/* 4.5. Impact */}
         {/* 4.5. Impact Statement */}
-        <section ref={impactStatementRef} className="section" style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', justifyContent: 'center', backgroundColor: 'var(--bg-color)', position: 'relative', zIndex: 10 }}>
-          <div ref={impactStatementDescRef} style={{ width: '100%', maxWidth: '1400px', display: 'flex', flexDirection: 'column', gap: '2.5rem', paddingLeft: '4vw', paddingRight: '4vw' }}>
+        <section ref={impactStatementRef} className="section section-impact-statement">
+          <div ref={impactStatementDescRef} className="impact-statement-desc">
             <div style={{ display: 'flex', flexDirection: 'column' }}>
               <div style={{ overflow: 'hidden' }}>
-                <p className="line-text heading-large" style={{ lineHeight: '1.1', letterSpacing: '-0.02em', fontWeight: 400, margin: 0 }}>I BUILD SYSTEMS THAT TURN</p>
+                <p className="line-text heading-large impact-statement-heading">I BUILD SYSTEMS THAT TURN</p>
               </div>
               <div style={{ overflow: 'hidden' }}>
-                <p className="line-text heading-large" style={{ lineHeight: '1.1', letterSpacing: '-0.02em', fontWeight: 400, margin: 0 }}><span className="accent-text" style={{ fontStyle: 'italic' }}>COMPLEX</span> PROBLEMS INTO</p>
+                <p className="line-text heading-large impact-statement-heading"><span className="accent-text" style={{ fontStyle: 'italic' }}>COMPLEX</span> PROBLEMS INTO</p>
               </div>
               <div style={{ overflow: 'hidden' }}>
-                <p className="line-text heading-large" style={{ lineHeight: '1.1', letterSpacing: '-0.02em', fontWeight: 400, margin: 0 }}>USEFUL SOFTWARE.</p>
+                <p className="line-text heading-large impact-statement-heading">USEFUL SOFTWARE.</p>
               </div>
             </div>
           </div>
         </section>
 
         {/* 4.6. Impact Points */}
-        <section ref={impactPointsRef} className="section" style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', justifyContent: 'center', paddingLeft: '4vw', paddingRight: '4vw', paddingTop: '10vh', paddingBottom: '10vh' }}>
-          <div className="grid grid-cols-2" style={{ gap: '4rem 8rem' }}>
+        <section ref={impactPointsRef} className="section section-impact-points">
+          <div className="impact-points-grid">
             <div style={{ overflow: 'hidden' }}>
-              <div className="impact-item" style={{ borderTop: '1px solid rgba(255,255,255,0.15)', paddingTop: '2rem' }}>
-                <div style={{ fontSize: '1rem', letterSpacing: '0.05em', opacity: 0.6, marginBottom: '1.5rem', display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                  <span className="accent-text">01</span> <span style={{ width: '20px', height: '1px', background: 'rgba(255,255,255,0.3)' }}></span> AI SYSTEMS
+              <div className="impact-item">
+                <div className="impact-item-badge">
+                  <span className="accent-text">01</span> <span className="impact-divider"></span> AI SYSTEMS
                 </div>
-                <p className="text-large" style={{ fontWeight: 400, opacity: 0.9, fontSize: 'clamp(1.125rem, 2vw, 1.75rem)', lineHeight: '1.4' }}>
+                <p className="text-large impact-item-text">
                   Building practical AI-powered systems, not just model demos.
                 </p>
               </div>
             </div>
 
             <div style={{ overflow: 'hidden' }}>
-              <div className="impact-item" style={{ borderTop: '1px solid rgba(255,255,255,0.15)', paddingTop: '2rem' }}>
-                <div style={{ fontSize: '1rem', letterSpacing: '0.05em', opacity: 0.6, marginBottom: '1.5rem', display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                  <span className="accent-text">02</span> <span style={{ width: '20px', height: '1px', background: 'rgba(255,255,255,0.3)' }}></span> AUTOMATION
+              <div className="impact-item">
+                <div className="impact-item-badge">
+                  <span className="accent-text">02</span> <span className="impact-divider"></span> AUTOMATION
                 </div>
-                <p className="text-large" style={{ fontWeight: 400, opacity: 0.9, fontSize: 'clamp(1.125rem, 2vw, 1.75rem)', lineHeight: '1.4' }}>
+                <p className="text-large impact-item-text">
                   Turning repetitive workflows into intelligent automated systems.
                 </p>
               </div>
             </div>
 
             <div style={{ overflow: 'hidden' }}>
-              <div className="impact-item" style={{ borderTop: '1px solid rgba(255,255,255,0.15)', paddingTop: '2rem' }}>
-                <div style={{ fontSize: '1rem', letterSpacing: '0.05em', opacity: 0.6, marginBottom: '1.5rem', display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                  <span className="accent-text">03</span> <span style={{ width: '20px', height: '1px', background: 'rgba(255,255,255,0.3)' }}></span> REAL-WORLD PROBLEMS
+              <div className="impact-item">
+                <div className="impact-item-badge">
+                  <span className="accent-text">03</span> <span className="impact-divider"></span> REAL-WORLD PROBLEMS
                 </div>
-                <p className="text-large" style={{ fontWeight: 400, opacity: 0.9, fontSize: 'clamp(1.125rem, 2vw, 1.75rem)', lineHeight: '1.4' }}>
+                <p className="text-large impact-item-text">
                   Applying software and AI to problems that have practical value.
                 </p>
               </div>
             </div>
 
             <div style={{ overflow: 'hidden' }}>
-              <div className="impact-item" style={{ borderTop: '1px solid rgba(255,255,255,0.15)', paddingTop: '2rem' }}>
-                <div style={{ fontSize: '1rem', letterSpacing: '0.05em', opacity: 0.6, marginBottom: '1.5rem', display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                  <span className="accent-text">04</span> <span style={{ width: '20px', height: '1px', background: 'rgba(255,255,255,0.3)' }}></span> EXPERIMENTATION
+              <div className="impact-item">
+                <div className="impact-item-badge">
+                  <span className="accent-text">04</span> <span className="impact-divider"></span> EXPERIMENTATION
                 </div>
-                <p className="text-large" style={{ fontWeight: 400, opacity: 0.9, fontSize: 'clamp(1.125rem, 2vw, 1.75rem)', lineHeight: '1.4' }}>
+                <p className="text-large impact-item-text">
                   Constantly exploring new technologies, architectures, and ideas.
                 </p>
               </div>
@@ -1103,10 +1103,10 @@ function App() {
         </section>
 
         {/* 4.7. Experience */}
-        <section ref={experienceRef} className="section" style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
-          <h2 className="heading-large mb-12" style={{ paddingLeft: '4vw', paddingRight: '4vw', paddingTop: '10vh' }}>EXPERIENCE</h2>
+        <section ref={experienceRef} className="section section-experience">
+          <h2 className="heading-large mb-12 section-header-padded">EXPERIENCE</h2>
           
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr', flexGrow: 1, alignItems: 'center', paddingLeft: '4vw', paddingRight: '4vw', paddingBottom: '10vh' }}>
+          <div className="experience-cards-wrapper">
             {[
               {
                 id: "groove-it",
@@ -1129,16 +1129,16 @@ function App() {
                 className="experience-card"
                 style={{ gridColumn: '1 / 2', gridRow: '1 / 2', width: '100%', maxWidth: '1200px', margin: '0 auto', pointerEvents: index === 0 ? 'auto' : 'none' }}
               >
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '2rem' }}>
-                  <div style={{ fontSize: 'clamp(2rem, 5vw, 4rem)', fontWeight: 400, opacity: 0.9, letterSpacing: '0.02em', lineHeight: 1 }}>
+                <div className="experience-card-top">
+                  <div className="experience-company">
                     {exp.company}
                   </div>
-                  <div className="accent-text" style={{ fontSize: '1rem', letterSpacing: '0.1em' }}>
+                  <div className="accent-text experience-index">
                     0{index + 1} / 0{arr.length}
                   </div>
                 </div>
 
-                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '2rem', marginBottom: '3rem', opacity: 0.8, fontSize: '1rem', letterSpacing: '0.05em', textTransform: 'uppercase' }}>
+                <div className="experience-meta">
                   <span className="accent-text">{exp.role}</span>
                   <span style={{ opacity: 0.5 }}>•</span>
                   <span>{exp.date}</span>
@@ -1146,22 +1146,22 @@ function App() {
                   <span>{exp.location}</span>
                 </div>
 
-                <div style={{ maxWidth: '800px', marginBottom: '3rem' }}>
-                  <p className="text-large" style={{ fontWeight: 300, opacity: 0.9, fontSize: 'clamp(1.125rem, 2vw, 1.5rem)', lineHeight: '1.6', margin: 0 }}>
+                <div className="experience-desc-wrapper">
+                  <p className="text-large experience-desc">
                     {exp.description}
                   </p>
                 </div>
 
-                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem 3rem', marginBottom: '3rem' }}>
+                <div className="experience-responsibilities">
                   {exp.responsibilities.map((resp, i) => (
-                    <div key={i} style={{ fontSize: '0.85rem', letterSpacing: '0.1em', opacity: 0.6, display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-                      <span style={{ width: '15px', height: '1px', background: 'var(--accent-color)' }}></span> {resp}
+                    <div key={i} className="experience-resp-item">
+                      <span className="experience-bullet"></span> {resp}
                     </div>
                   ))}
                 </div>
 
                 <div>
-                  <p style={{ fontSize: '1rem', fontStyle: 'italic', opacity: 0.7, margin: 0 }}>
+                  <p className="experience-impact">
                     {exp.impact}
                   </p>
                 </div>
@@ -1171,14 +1171,14 @@ function App() {
         </section>
 
         {/* 4.8. Skills & Tools */}
-        <section ref={skillsRef} className="section" style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', justifyContent: 'center', paddingLeft: '4vw', paddingRight: '4vw', paddingTop: '15vh', paddingBottom: '15vh' }}>
-          <h2 className="heading-large mb-12">SKILLS & TOOLS</h2>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '4rem 2rem', maxWidth: '1400px', width: '100%' }}>
+        <section ref={skillsRef} className="section section-skills">
+          <h2 className="heading-large mb-12 section-header-padded">SKILLS & TOOLS</h2>
+          <div className="skills-grid">
             
             <div style={{ overflow: 'hidden' }}>
               <div className="skill-category">
-                <div className="accent-text" style={{ fontSize: '0.85rem', letterSpacing: '0.1em', marginBottom: '1.5rem' }}>LANGUAGES</div>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', fontSize: 'clamp(1.125rem, 2vw, 1.5rem)', opacity: 0.9, fontWeight: 300 }}>
+                <div className="accent-text skill-category-title">LANGUAGES</div>
+                <div className="skill-items">
                   <span>Python</span>
                   <span>JavaScript</span>
                   <span>TypeScript</span>
@@ -1190,8 +1190,8 @@ function App() {
 
             <div style={{ overflow: 'hidden' }}>
               <div className="skill-category">
-                <div className="accent-text" style={{ fontSize: '0.85rem', letterSpacing: '0.1em', marginBottom: '1.5rem' }}>AI / INTELLIGENCE</div>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', fontSize: 'clamp(1.125rem, 2vw, 1.5rem)', opacity: 0.9, fontWeight: 300 }}>
+                <div className="accent-text skill-category-title">AI / INTELLIGENCE</div>
+                <div className="skill-items">
                   <span>LLM Applications</span>
                   <span>RAG</span>
                   <span>AI Agents</span>
@@ -1203,8 +1203,8 @@ function App() {
 
             <div style={{ overflow: 'hidden' }}>
               <div className="skill-category">
-                <div className="accent-text" style={{ fontSize: '0.85rem', letterSpacing: '0.1em', marginBottom: '1.5rem' }}>AUTOMATION</div>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', fontSize: 'clamp(1.125rem, 2vw, 1.5rem)', opacity: 0.9, fontWeight: 300 }}>
+                <div className="accent-text skill-category-title">AUTOMATION</div>
+                <div className="skill-items">
                   <span>n8n</span>
                   <span>ComfyUI</span>
                   <span>Workflow Automation</span>
@@ -1214,8 +1214,8 @@ function App() {
 
             <div style={{ overflow: 'hidden' }}>
               <div className="skill-category">
-                <div className="accent-text" style={{ fontSize: '0.85rem', letterSpacing: '0.1em', marginBottom: '1.5rem' }}>WEB / BACKEND</div>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', fontSize: 'clamp(1.125rem, 2vw, 1.5rem)', opacity: 0.9, fontWeight: 300 }}>
+                <div className="accent-text skill-category-title">WEB / BACKEND</div>
+                <div className="skill-items">
                   <span>React</span>
                   <span>Next.js</span>
                   <span>FastAPI</span>
@@ -1227,8 +1227,8 @@ function App() {
 
             <div style={{ overflow: 'hidden' }}>
               <div className="skill-category">
-                <div className="accent-text" style={{ fontSize: '0.85rem', letterSpacing: '0.1em', marginBottom: '1.5rem' }}>DATA / INFRASTRUCTURE</div>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', fontSize: 'clamp(1.125rem, 2vw, 1.5rem)', opacity: 0.9, fontWeight: 300 }}>
+                <div className="accent-text skill-category-title">DATA / INFRASTRUCTURE</div>
+                <div className="skill-items">
                   <span>PostgreSQL</span>
                   <span>Supabase</span>
                   <span>MongoDB</span>
@@ -1243,9 +1243,9 @@ function App() {
         </section>
 
         {/* 4.9. Hackathons */}
-        <section ref={hackathonsRef} className="section" style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
-          <h2 className="heading-large mb-12" style={{ paddingLeft: '4vw', paddingRight: '4vw', paddingTop: '10vh' }}>HACKATHONS</h2>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr', flexGrow: 1, alignItems: 'center', paddingLeft: '4vw', paddingRight: '4vw', paddingBottom: '10vh' }}>
+        <section ref={hackathonsRef} className="section section-hackathons">
+          <h2 className="heading-large mb-12 section-header-padded">HACKATHONS</h2>
+          <div className="hackathons-cards-wrapper">
             
             {hackathonsData.map((hackathon, index) => (
               <div 
@@ -1253,24 +1253,24 @@ function App() {
                 className="hackathon-card"
                 style={{ gridColumn: '1 / 2', gridRow: '1 / 2', width: '100%', maxWidth: '1200px', margin: '0 auto', pointerEvents: index === 0 ? 'auto' : 'none' }}
               >
-                <div style={{ borderTop: '1px solid rgba(255,255,255,0.15)', paddingTop: '2rem', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
+                <div className="hackathon-card-inner">
                   
                   <div>
-                    <div className="accent-text" style={{ fontSize: '0.85rem', letterSpacing: '0.1em', marginBottom: '1rem', textTransform: 'uppercase' }}>
+                    <div className="accent-text hackathon-event">
                       {hackathon.event}
                     </div>
-                    <div style={{ fontSize: 'clamp(1.5rem, 3vw, 2.5rem)', fontWeight: 400, opacity: 0.9, letterSpacing: '0.05em', marginBottom: '1rem', minHeight: '3rem' }}>
+                    <div className="hackathon-name">
                       {hackathon.name}
                     </div>
                     {hackathon.role && (
-                      <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', opacity: 0.8, fontSize: '0.85rem', letterSpacing: '0.1em', textTransform: 'uppercase', minHeight: '1rem' }}>
+                      <div className="hackathon-role">
                         <span style={{ width: '15px', height: '1px', background: 'var(--accent-color)' }}></span> {hackathon.role}
                       </div>
                     )}
                   </div>
 
                   <div>
-                    <p className="text-large" style={{ fontWeight: 300, opacity: 0.9, fontSize: 'clamp(1rem, 1.5vw, 1.25rem)', lineHeight: '1.6', margin: '0 0 2rem 0', minHeight: '4rem' }}>
+                    <p className="text-large hackathon-description">
                       {hackathon.description}
                     </p>
                     {hackathon.tech && (
@@ -1291,17 +1291,9 @@ function App() {
 
 
         {/* 5. Contact */}
-        <section ref={contactRef} className="section" style={{ 
-          minHeight: '100vh', 
-          display: 'flex', 
-          flexDirection: 'column', 
-          justifyContent: 'space-between', 
-          paddingLeft: '4vw', 
-          paddingRight: '4vw',
-          paddingBottom: '2rem'
-        }}>
-          <div style={{ marginTop: 'auto', marginBottom: 'auto' }}>
-            <h2 className="heading-large" style={{ lineHeight: '1.05', letterSpacing: '-0.02em', marginBottom: '4rem' }}>
+        <section ref={contactRef} className="section section-contact">
+          <div className="contact-content">
+            <h2 className="heading-large contact-heading">
               <div style={{ overflow: 'hidden' }}>
                 <div className="contact-reveal-line">LET'S BUILD</div>
               </div>
@@ -1313,7 +1305,7 @@ function App() {
               </div>
             </h2>
             
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
+            <div className="contact-links-list">
               <div className="contact-link-wrapper" style={{ width: 'fit-content' }}>
                 <a href="mailto:adityadugar7@gmail.com" className="text-large contact-link">
                   <span>Email</span>
@@ -1335,17 +1327,7 @@ function App() {
             </div>
           </div>
 
-          <div style={{
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'flex-end',
-            paddingTop: '2rem',
-            borderTop: '1px solid rgba(255, 255, 255, 0.1)',
-            opacity: 0.5,
-            fontSize: '0.75rem',
-            letterSpacing: '0.05em',
-            textTransform: 'uppercase'
-          }}>
+          <div className="contact-footer">
             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem' }}>
               <span>ADITYA DUGAR</span>
               <span>AI • AUTOMATION • SOFTWARE</span>

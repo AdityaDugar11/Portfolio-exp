@@ -61,11 +61,18 @@
 @media (max-width: 767px) {
   .hero-portrait {
     --mask-radius: 108px;
-    right: -8vw;
-    width: 78vw;
+    right: -4vw;
+    width: min(78vw, 360px);
     height: 54vh;
-    min-height: 280px;
+    min-height: 260px;
     opacity: 0.8;
+  }
+}
+
+@media (max-height: 640px) {
+  .hero-portrait {
+    height: 65vh;
+    min-height: 220px;
   }
 }
 

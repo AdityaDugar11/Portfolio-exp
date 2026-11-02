@@ -11,8 +11,8 @@ export default function RepoGraph({ repos = [] }) {
       if (!containerRef.current) return;
 
       setDimensions({
-        width: Math.max(containerRef.current.clientWidth, 320),
-        height: Math.max(containerRef.current.clientHeight, 600),
+        width: Math.max(containerRef.current.clientWidth || 320, 280),
+        height: Math.max(containerRef.current.clientHeight || 360, 320),
       });
     };
 
@@ -51,8 +51,8 @@ export default function RepoGraph({ repos = [] }) {
      * every repository starts inside the visible canvas.
      */
     const radius = Math.min(
-      Math.max(dimensions.width - 160, 280),
-      Math.max(dimensions.height - 160, 440)
+      Math.max(dimensions.width - 100, 200),
+      Math.max(dimensions.height - 100, 240)
     ) * 0.36;
 
     const innerCount = Math.min(6, count);
@@ -296,7 +296,7 @@ export default function RepoGraph({ repos = [] }) {
       style={{
         width: '100%',
         height: '100%',
-        minHeight: '600px',
+        minHeight: '320px',
         position: 'relative',
         cursor: 'grab',
       }}
